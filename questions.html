@@ -1,45 +1,14 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Музей боевой и трудовой славы МАОУ"СОШ №17"</title>
-  <link rel="stylesheet" href="museum.css">
-  <title>Эффект печатной машинки</title>
-  <style>
-    .typewriter {
-      font-family: monospace, monospace;
-      overflow: hidden;              /* Скрываем текст за пределами блока */
-      white-space: nowrap;           /* Запрещаем перенос строк */
-      border-right: 3px solid #565c4f; /* Мигающий курсор */
-      width: 0;                     /* Начальная ширина текста */
-      animation: typing 6s steps(40, end) forwards, blink-caret 0.75s step-end infinite;
-      font-size: 2.5rem;
-      color: #ffffff;
-      margin: 40px auto;
-      max-width: 100%;
-      box-sizing: border-box;
-    }
-
-    /* Анимация печати текста */
-    @keyframes typing {
-      from { width: 0; }
-      to { width: 100%; }
-    }
-
-    /* Мигающий курсор */
-    @keyframes blink-caret {
-      0%, 100% { border-color: transparent; }
-      50% { border-color: #565c4f; }
-    }
-  </style>
+    <meta charset="UTF-8">
+    <title>Музей боевой и трудовой славы МАОУ"СОШ №17"</title>
+    <link rel="stylesheet" href="museum.css">
 </head>
-
 <body>
     <header>
-  <h1 class="typewriter">Музей боевой и трудовой славы МАОУ"СОШ №17"</h1>
-</header>
-
+        <h1>Музей боевой и трудовой славы МАОУ"СОШ №17"</h1>
+    </header>
     
 <nav class="nav-center">
   <a href="museum.html" class="home-link" aria-label="Главная">
@@ -75,23 +44,118 @@
   </div>
 </nav>
 
-     
-      <div class="main-row">
-  <img src="https://3.downloader.disk.yandex.ru/preview/2fe1687649d793f835b7b78d69cad0df56f7d390958d63457aad14dedec98f40/inf/CI8J16c0VaR-08M8OQ4Q1QZjjnF7Nm_vHEnMKt3yjyROqfNof8ovl5BgjmlQvL9N2w4v33ysSYvbIXFP68JYQQ%3D%3D?uid=1442150747&filename=IMG-20250526-WA0007.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1442150747&tknv=v3&size=1855x956"
-       class="side-image" alt="Эмблема музея" />
 
-  <div class="news-box">
-    <h2>Новости</h2>
-    <p>Недавно было проведено событие, посвящённое 9 мая.</p>
-  </div>
-</div>
 
-  
 
-</body>
-        </section>
+<section id="question-form" class="container">
+  <h2>Задать вопрос</h2>
+  <form action="mailto:schoolmuseum17@inbox.ru" method="post" enctype="text/plain" novalidate>
+    <label for="name">Ваше имя:</label>
+    <input type="text" id="name" name="name" required placeholder="Введите ваше имя" />
 
-<section id="contacts">
+    <label for="question">Ваш вопрос:</label>
+    <textarea id="question" name="question" rows="5" required placeholder="Введите ваш вопрос"></textarea>
+
+    <label for="email">E-mail:</label>
+    <input type="email" id="email" name="email" required placeholder="Введите ваш e-mail" />
+
+    <div class="checkbox-group">
+      <input type="checkbox" id="agree" name="agree" required />
+      <label for="agree">Я соглашаюсь с условиями пользования</label>
+    </div>
+
+    <button type="submit">Отправить</button>
+  </form>
+</section>
+
+<style>
+  /* Контейнер и заголовок */
+  #question-form {
+    max-width: 600px;
+    margin: 40px auto;
+    background: white;
+    padding: 30px 40px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+    color: #565c4f;
+  }
+  #question-form h2 {
+    margin-bottom: 25px;
+    font-weight: bold;
+    font-size: 28px;
+    text-align: left;
+  }
+
+  /* Метки */
+  #question-form label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+    font-size: 16px;
+  }
+
+  /* Поля ввода и textarea */
+  #question-form input[type="text"],
+  #question-form input[type="email"],
+  #question-form textarea {
+    width: 100%;
+    padding: 10px 15px;
+    margin-bottom: 20px;
+    border: 1.5px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    font-family: inherit;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease;
+  }
+  #question-form input[type="text"]:focus,
+  #question-form input[type="email"]:focus,
+  #question-form textarea:focus {
+    outline: none;
+    border-color: #565c4f;
+    box-shadow: 0 0 5px rgba(86, 92, 79, 0.5);
+  }
+
+  /* Чекбокс и подпись */
+  .checkbox-group {
+    display: flex;
+    align-items: center;
+    margin-bottom: 25px;
+    gap: 10px;
+    font-size: 14px;
+  }
+  .checkbox-group input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    cursor: pointer;
+  }
+  .checkbox-group label {
+    margin: 0;
+    font-weight: normal;
+  }
+
+  /* Кнопка отправки */
+  #question-form button {
+    background-color: #565c4f;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    display: block;
+    width: 100%;
+  }
+  #question-form button:hover {
+    background-color: #444838;
+  }
+</style>
+
+
+
+    <section id="contacts">
   <h2>Контакты</h2>
   
   <p>
@@ -129,10 +193,7 @@
   </p>
 </section>
 
-
-
-
-<footer>
+    <footer>
   &copy; 2025 Школьный музей. Все права защищены.
   <div class="footer-vk">
     <a href="https://vk.com/club229787084" target="_blank" rel="noopener noreferrer" aria-label="Страница ВКонтакте">

@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Музей боевой и трудовой славы МАОУ"СОШ №17"</title>
+    <link rel="stylesheet" href="museum.css">
+</head>
+<body>
+    <header>
+        <h1>Музей боевой и трудовой славы МАОУ"СОШ №17"</h1>
+    </header>
+    
+<nav class="nav-center">
+  <a href="museum.html" class="home-link" aria-label="Главная">
+    <!-- SVG иконка домика -->
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M10 20v-6h4v6h5v-8h3L12 3 2 12h3v8z"/>
+    </svg>
+  </a>
+  <div class="dropdown">
+    <a href="" class="dropbtn">О музее ▼</a>
+    <div class="dropdown-content">
+      <a href="history.html">История создания музея</a>
+      <a href="publications.html">Публикации</a>
+      <a href="questions.html">Вопрос-ответ</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="" class="dropbtn">Посетителям ▼</a>
+    <div class="dropdown-content">
+      <a href="news.html">Новости</a>
+      <a href="ads.html">Объявления</a>
+      <a href="rules.html">Правила посещения</a>
+      <a href="antiterrorism.html">Антитеррор</a>
+    </div>
+  </div>
+  <div class="dropdown">
+    <a href="" class="dropbtn">Выставки и события ▼</a>
+    <div class="dropdown-content">
+      <a href="excursions.html">Экскурсии</a>
+      <a href="expositions.html">Экспозиции</a>
+      <a href="collection.html">Виртуальная коллекция</a>
+    </div>
+  </div>
+</nav>
+
+
+
+            <section id="excursions">
+  <h2>Экскурсии</h2>
+  
+  <div class="slider">
+    <div class="slides">
+      <img src="https://3.downloader.disk.yandex.ru/preview/2fe1687649d793f835b7b78d69cad0df56f7d390958d63457aad14dedec98f40/inf/CI8J16c0VaR-08M8OQ4Q1QZjjnF7Nm_vHEnMKt3yjyROqfNof8ovl5BgjmlQvL9N2w4v33ysSYvbIXFP68JYQQ%3D%3D?uid=1442150747&filename=IMG-20250526-WA0007.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1442150747&tknv=v3&size=1855x956" alt="Экскурсия 1" class="slide active">
+      <img src="https://3.downloader.disk.yandex.ru/preview/167506097e7c25665ed4a6b7f0547e04a8d662345e53e1d1964ee940e8aed9b7/inf/BXFe6VXNVyJ-mt2dyP1hvR7WF-Wcs3F3nzvbVw5LdW-vutyQHQjyPVAmjryUOM_mT8ICICKeYsba6TJLT-SUNw%3D%3D?uid=1442150747&filename=Берцы%2C%20нательное%20белье.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1442150747&tknv=v3&size=1855x956" alt="Экскурсия 2" class="slide">
+      <img src="https://2.downloader.disk.yandex.ru/preview/6ff3e9f77a800cfaaf0329159cfc1328d38e55ef55e3008cd1d4dc7758fcd893/inf/KyOtsYOJwgZfohaNoPXH3gAFZ_grKYVxBA0ACTLeSd-RE18usW0I_QALObJTj17xK7Na3zGLz7E67ZQO1H0LZg%3D%3D?uid=1442150747&filename=Память.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1442150747&tknv=v3&size=1855x956" alt="Экскурсия 3" class="slide">
+      <img src="https://2.downloader.disk.yandex.ru/preview/66e255d81fe09cbb3ad493c182a249da35fd9973998164f20d18b741040d4436/inf/Y1MDw6nLPXFhtcyKv8o8FLnuMydur3pWqoy7B0q_68NSdzh4CnW1aFqc2kQxa4aYpo_jxaRmgE9S9mDuukGcfg%3D%3D?uid=1442150747&filename=Трофей%20снаряд.jpg&disposition=inline&hash=&limit=0&content_type=image%2Fjpeg&owner_uid=1442150747&tknv=v3&size=1855x956" alt="Экскурсия 3" class="slide">
+      <!-- Добавьте больше изображений по необходимости -->
+    </div>
+    <button class="prev" aria-label="Предыдущий слайд">&#10094;</button>
+    <button class="next" aria-label="Следующий слайд">&#10095;</button>
+    <!-- Кнопка воспроизведения/паузы -->
+  <button class="play-pause" aria-label="Пауза слайдшоу" title="Пауза слайдшоу">&#10074;&#10074;</button>
+  </div>
+</section>
+
+
+
+
+
+
+<script>
+document.addEventListener('DOMContentLoaded', () => {
+  const slides = document.querySelectorAll('#excursions .slide');
+  const prevBtn = document.querySelector('#excursions .prev');
+  const nextBtn = document.querySelector('#excursions .next');
+  const playPauseBtn = document.querySelector('#excursions .play-pause');
+  let currentIndex = 0;
+  let isPlaying = true;
+  let intervalId;
+
+  function showSlide(index) {
+    slides.forEach((slide, i) => {
+      slide.classList.toggle('active', i === index);
+    });
+  }
+
+  function nextSlide() {
+    currentIndex = (currentIndex === slides.length - 1) ? 0 : currentIndex + 1;
+    showSlide(currentIndex);
+  }
+
+  function prevSlide() {
+    currentIndex = (currentIndex === 0) ? slides.length - 1 : currentIndex - 1;
+    showSlide(currentIndex);
+  }
+
+  function startSlideshow() {
+    intervalId = setInterval(nextSlide, 3000);
+    isPlaying = true;
+    playPauseBtn.innerHTML = '&#10074;&#10074;'; // Иконка "пауза"
+    playPauseBtn.setAttribute('aria-label', 'Пауза слайдшоу');
+    playPauseBtn.title = 'Пауза слайдшоу';
+  }
+
+  function stopSlideshow() {
+    clearInterval(intervalId);
+    isPlaying = false;
+    playPauseBtn.innerHTML = '&#9658;'; // Иконка "воспроизведение"
+    playPauseBtn.setAttribute('aria-label', 'Воспроизвести слайдшоу');
+    playPauseBtn.title = 'Воспроизвести слайдшоу';
+  }
+
+  prevBtn.addEventListener('click', () => {
+    prevSlide();
+    if (isPlaying) {
+      stopSlideshow();
+      startSlideshow();
+    }
+  });
+
+  nextBtn.addEventListener('click', () => {
+    nextSlide();
+    if (isPlaying) {
+      stopSlideshow();
+      startSlideshow();
+    }
+  });
+
+  playPauseBtn.addEventListener('click', () => {
+    if (isPlaying) {
+      stopSlideshow();
+    } else {
+      startSlideshow();
+    }
+  });
+
+  // Запускаем автопрокрутку при загрузке
+  startSlideshow();
+
+  // Показываем первый слайд
+  showSlide(currentIndex);
+});
+
+</script>
+
+
+
+
+    <section id="contacts">
+  <h2>Контакты</h2>
+  
+  <p>
+    <span class="icon">
+      <!-- Иконка адреса -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M8 0a5 5 0 0 0-5 5c0 3.25 5 11 5 11s5-7.75 5-11a5 5 0 0 0-5-5zm0 7a2 2 0 1 1 0-4 2 2 0 0 1 0 4z"/>
+      </svg>
+    </span>
+    Свердловская область, город Краснотурьинск, ул.Клубная, 18
+  </p>
+  
+  <p>
+    <span class="icon">
+      <!-- Иконка телефона -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M3.654 1.328a.678.678 0 0 1 .738-.098l2.522 1.26a.678.678 0 0 1 .344.59v2.39a.678.678 0 0 1-.252.52l-1.01.91a11.042 11.042 0 0 0 5.292 5.292l.91-1.01a.678.678 0 0 1 .52-.252h2.39a.678.678 0 0 1 .59.344l1.26 2.522a.678.678 0 0 1-.098.738l-2.013 2.013a1.745 1.745 0 0 1-1.947.448c-2.19-.87-4.88-3.56-5.75-5.75a1.745 1.745 0 0 1 .448-1.947L3.654 1.328z"/>
+      </svg>
+    </span>
+    +7 (919) 378-14-73
+  </p>
+  
+  <p>
+    Режим работы: приём посетителей с 8.30 до 15.00
+  </p>
+  
+  <p class="email">
+    <span class="icon">
+      <!-- Иконка почты -->
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" viewBox="0 0 16 16">
+        <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v1.243l-8 4.8-8-4.8V4zm0 2.383v5.617a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V6.383l-7.555 4.533a.5.5 0 0 1-.49 0L0 6.383z"/>
+      </svg>
+    </span>
+    <a href="mailto:schoolmuseum17@inbox.ru">schoolmuseum17@inbox.ru</a>
+  </p>
+</section>
+
+    <footer>
+  &copy; 2025 Школьный музей. Все права защищены.
+  <div class="footer-vk">
+    <a href="https://vk.com/club229787084" target="_blank" rel="noopener noreferrer" aria-label="Страница ВКонтакте">
+      <img src="https://upload.wikimedia.org/wikipedia/commons/2/21/VK.com-logo.svg" alt="ВКонтакте" />
+    </a>
+  </div>
+</footer>
+</body>
+</html>
